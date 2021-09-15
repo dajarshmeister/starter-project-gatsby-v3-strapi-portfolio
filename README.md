@@ -8,10 +8,12 @@ https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 
 1.  src
     - assets
+      - scss
       - images
     - components
+    - constants
+    - templates
     - pages
-    - scss
 
 ## Installing SCSS support
 
@@ -20,8 +22,8 @@ https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 ## Bootstrap
 
 1. npm install bootstrap
-2. create src/scss/main.scss
-3. create src/scss/vendors/\_bootstrap.scss
+2. create src/assets/scss/main.scss
+3. create src/assets/scss/vendors/\_bootstrap.scss
 4. https://getbootstrap.com/docs/5.1/customize/sass/ use this site to copy and paste the template. You can replace "../node_modules/" with "~" as it means the same thing
 5. Import your other partials into this file that effect bootstrap
 6. Import bootstrap into "gatsby-browser.js"
@@ -34,21 +36,21 @@ https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 ## Gatsby Web Fonts
 
 1.  https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/?=web%20fonts
-2.  Fonts need to be placed in the extend area of the tailwind config
 
 ## Layout Module
 
 1.  In the components folder create a "Layout.js" This file accepts children prop.
 2.  Create a Header.js and Footer.js to wrap site and import it into Layout.js
+3.  Another approach to this is simpler in the long run because it programmatically wraps all the pages called gatsby browser api.
 
 ## Images
 
 1.  Create folder "src/assets/images"
 2.  Install [gatsby-plugin-image](https://www.gatsbyjs.com/plugins/gatsby-plugin-image)
 3.  Use StaticImage if images are used exactly the same and don't change. If the image is dynamic or being imported through props use GatsbyImage
-4.  To apply classes to image itself use "imgClassName"
-5.  Static images you pass src prop
-6.  Gatsby image pass image prop
+4.  To apply classes to image itself use "imgClassName" prop
+5.  Static images you pass "src" prop
+6.  Gatsby image pass "image" prop
 
 ## Active styles for current page
 
@@ -82,7 +84,7 @@ Notes: Faster, less control
 Notes: More complicated, more control
 
 1.  Create a template folder in src
-2.  Create a file called gatsby-node.js
+2.  Create a file called gatsby-node.js and place it at root of site.
 3.  Everytime you do something in gatsby node you have to restart server
 4.  When you create a query you need to wrap it in parenthesis.
 5.  First thing we do is execute a query and store the data we get back into a variable.
