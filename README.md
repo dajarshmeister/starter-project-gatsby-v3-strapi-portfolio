@@ -51,6 +51,12 @@ https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 4.  To apply classes to image itself use "imgClassName" prop
 5.  Static images you pass "src" prop
 6.  Gatsby image pass "image" prop
+7.  Static images when you pass the src prop you can't pass it in a dynamic value with curlys you need to just type out the path to where the image is located.
+8.  Sometimes it doesnt make sense to use StaticImage bc if you're using an svg its already small file size and importing it the normal react way is easier.
+
+## SVG Library
+
+[UnDraw](https://undraw.co/)
 
 ## Active styles for current page
 
@@ -96,6 +102,7 @@ Notes: More complicated, more control
 ## Headless CMS
 
 1.  Make sure pages are set to have unique values
+2.  Consider if the site values will be constantly changing sometimes its better to not put every little thing into the headless CMS and instead manage it locally within the project instead.
 
 ## Icons
 
@@ -138,4 +145,13 @@ In order to wrap your entire site with layout component programmatically
 
 ## Creating constants
 
-1.  You can create constants for instance an array of objects to build out navbar and then just import that file into other parts of your application
+1.  You can create constants for instance an array of objects to build out navbar and then just import that file into other parts of your application.
+2.  You can also place components inside of an object when you loop through something. For instance i could have an array of objects. On each item in the array i have a components that is a property on there.
+
+## StaticImage SVG Gotcha
+
+Control the height of the image using its width in css. If you explicitly set a height then you might face clipping issues.
+
+## Passing props
+
+If a value is not available within a component. For instance passing a title you can inside the return just do {title || "Default title"}
