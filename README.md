@@ -155,3 +155,14 @@ Control the height of the image using its width in css. If you explicitly set a 
 ## Passing props
 
 If a value is not available within a component. For instance passing a title you can inside the return just do {title || "Default title"}
+
+## Strapi
+
+- Make sure to get latest of strapi otherwise it wont work
+- Strapi works differently from contentful in that the server runs on your local machine and then you have to connect your gatsby application to that local server.
+
+## Tab component
+
+1. Create a state and set the value to 0
+2. iterate over the items in the array and when the tab is clicked it updates the state to the value associated within the array and shows the content.
+3. In order to do dynamic classes use the curlies on the class and check the value of the state and if it matches then render the correct classes like so: className={index === value ? "active-btn job-btn" : "job-btn"}
