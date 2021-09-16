@@ -158,8 +158,12 @@ If a value is not available within a component. For instance passing a title you
 
 ## Strapi
 
-- Make sure to get latest of strapi otherwise it wont work
-- Strapi works differently from contentful in that the server runs on your local machine and then you have to connect your gatsby application to that local server.
+1.  Make sure to get latest of strapi otherwise it wont work
+2.  Strapi works differently from contentful in that the server runs on your local machine and then you have to connect your gatsby application to that local server.
+3.  Strapi has 3 different data structure types (Collection types, Single type, component)
+    - **Collection type:** You would use this for creating multiple entries of the same data structure for instance all of your recipes.
+    - **Single type:** You would use this if the data structure was only used once. Maybe you have a very specific page, such as the home page.
+    - **Component type:** This is a reusable data structure that can be imported into either a collection type or a single type. For lets say I have a banner component I know i will always need for different collection types. Instead of me rewriting those fields over and over again i can just import the component data structure so that it is reusable.
 
 ## Tab component
 
