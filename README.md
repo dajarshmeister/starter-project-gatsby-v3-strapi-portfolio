@@ -4,6 +4,10 @@
 
 https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 
+## React tips
+
+1.  You can pass multiple properties to a component by just using the spread operator like {...project}
+
 ## Folder Structure
 
 1.  src
@@ -164,6 +168,8 @@ If a value is not available within a component. For instance passing a title you
     - **Collection type:** You would use this for creating multiple entries of the same data structure for instance all of your recipes.
     - **Single type:** You would use this if the data structure was only used once. Maybe you have a very specific page, such as the home page.
     - **Component type:** This is a reusable data structure that can be imported into either a collection type or a single type. For lets say I have a banner component I know i will always need for different collection types. Instead of me rewriting those fields over and over again i can just import the component data structure so that it is reusable.
+4.  Anytime you create a new content type you need to go into settings > roles (user permissions) > public > set content type to find, find one
+5.  GatsbyImage needs to be passed image={getImage(image.localFile)}
 
 ## Tab component
 
