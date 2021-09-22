@@ -83,11 +83,16 @@ https://www.gatsbyjs.com/docs/creating-and-modifying-pages/
 
 Either option for creating pages isnt necesarrily better than one another its good to know both.
 
-## File System API
+## File System Route API
 
 Notes: Faster, less control
 
 1.  Create a file within the pages folder and it must be named the same name that is in graphql but remove the word "all" from the name. This file will be used as the template to create new pages dynamically. Then you can choose which field you want gatsby to base the slug off of. For instance if you choose the title, gatsby will run a query behind the scenes for recipes and create pages for all recipes and base the slug off title.
+2.  When creating the file you need to wrap the file name in curlies like so:
+    {ContentfulRecipe.title}.js
+3.  In order to do a nested structure you need to create folders inside the pages folder. For instance "/pages/projects/{ContentfulRecipe.title}.js"
+4.  Remember to import graphql from gatsby!
+5.  Aside from getting data back from query variables. You automatically get back title of page from PageContext property on the props. I'm not sure yet if I need to use this.
 
 ## Gatsby Node API
 
@@ -115,6 +120,21 @@ Notes: More complicated, more control
 ## Query Variables
 
 Query variables allow you to pass in variables dynamically into your queries. We need this for create dynamic templates because when you make a query in your page for the data we need to pass in the title as a query variable to perform our second query. This is what brings in the rest of the page data.
+
+Query accepts in different variables into the query. You must specify the type that the variable is. For instance "String". Then you need to set up a filter that filters for that items that equal that specific variable.
+
+    export const query = graphql`
+    query getProject($title: String) {
+        strapiProject(title: { eq: $title }) {
+        title
+        description
+        }
+    }
+    `
+
+    {
+    "title": "PHP"
+    }
 
 ## Forms
 

@@ -2,12 +2,46 @@ import React from "react"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import Seo from "../components/Seo"
-const ProjectsPage = () => {
+const ProjectsPage = ({ data }) => {
+  const {
+    allStrapiProject: { projects },
+  } = data
   return (
     <>
-      <h2>projects page</h2>
+      <main>
+        <section className="projects-page">
+          <Projects title="all projects" projects={projects} />
+        </section>
+      </main>
     </>
   )
 }
+
+export const query = graphql`
+  {
+    allStrapiProject {
+      projects: nodes {
+        title
+        slug
+        featured
+        id
+        github
+        description
+        url
+        stack {
+          id
+          title
+        }
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default ProjectsPage
