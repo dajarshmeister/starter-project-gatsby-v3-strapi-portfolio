@@ -6,11 +6,19 @@
 
 module.exports = {
   /* Your site config here */
-
+  siteMetadata: {
+    title: `WebDev Portfolio`,
+    description: `Awesome Webdev Portfolio built with Gatsby and Strapi`,
+    titleTemplate: `%s | WebDev Portfolio`,
+    url: `https://webdevtest-josh.netlify.app`,
+    twitterUsername: "@joshy",
+    image: `/mainImg.png`,
+  },
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
