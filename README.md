@@ -7,6 +7,8 @@ https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-hello-world
 ## React tips
 
 1.  You can pass multiple properties to a component by just using the spread operator like {...project}
+2.  You can conditionally pass classes like this ->
+    className={isOpen ? "social-links sidebar-links" : null}
 
 ## Folder Structure
 
@@ -190,6 +192,26 @@ If a value is not available within a component. For instance passing a title you
     - **Component type:** This is a reusable data structure that can be imported into either a collection type or a single type. For lets say I have a banner component I know i will always need for different collection types. Instead of me rewriting those fields over and over again i can just import the component data structure so that it is reusable.
 4.  Anytime you create a new content type you need to go into settings > roles (user permissions) > public > set content type to find, find one
 5.  GatsbyImage needs to be passed image={getImage(image.localFile)}
+6.  Collection types / Single Types within the gatsby-config need to be updated to match the API:id found inside of strapi.
+
+    {
+    resolve: `gatsby-source-strapi`,
+    options: {
+    apiURL: `http://localhost:1337`,
+    queryLimit: 1000, // Defaults to 100
+    collectionTypes: [`job`, `project`],
+    singleTypes: [`about`]
+    },
+    },
+
+7.  For SVG images in strapi use
+
+    image {
+    id
+    localFile {
+    publicURL
+    }
+    }
 
 ## Tab component
 
